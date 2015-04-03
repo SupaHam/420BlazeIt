@@ -1,0 +1,27 @@
+name: 420BlazeIt
+main: com.supaham._420blazeit.PuffPuffDaddy
+version: '420.blaze.it'
+author: SupaHam
+commands:
+  420blazeit:
+    description: "420blazeit commands."
+  iquit:
+    description: "Get out of the thug life."
+permissions:
+  420blazeit.*:
+    description: "420blazeit druglord permission"
+    default: op
+    children:
+      '420blazeit.reload': true
+      '420blazeit.onjoin': true
+      '420blazeit.smoke': true
+      '420blazeit.quit': true
+  420blazeit.reload:
+    description: "Permission for blazing the config."
+    default: op
+  420blazeit.onjoin:
+    description: "Blaze one when you log in."
+  420blazeit.smoke:
+    description: "Blaze one whenever you want using /420blazeit"
+  420blazeit.quit:
+    description: "Quit your addiction"
