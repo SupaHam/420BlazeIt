@@ -135,7 +135,7 @@ public class PuffPuffDaddy extends JavaPlugin implements Listener {
                     this.smokers.remove(sender);
                     this.dontShow.remove(sender);
                     sender.sendMessage(ChatColor.GREEN + "You did it, congratulations! How many years did you waste " +
-                            "in NA?");
+                            "in Narcotics Anonymous?");
                 }
                 return true;
             }
