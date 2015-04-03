@@ -23,7 +23,7 @@ public class PuffPuffDaddy extends JavaPlugin implements Listener {
     private final Set<Player> smokers = new HashSet<>();
     private final Set<Player> dontShow = new HashSet<>();
     private int interval, particleAmount, radius;
-    private float speed, distanceFromMouth;
+    private float speed, distanceFromMouth, offset;
     private boolean smokeInRain;
     private FuckingSmokers task;
 
@@ -56,6 +56,7 @@ public class PuffPuffDaddy extends JavaPlugin implements Listener {
         config.addDefault("particle-radius", 32);
         config.addDefault("particle-dist-from-mouth", 0.4);
         config.addDefault("smoke-in-rain", false);
+        config.addDefault("offset-from-mouth", 30.0);
         config.options().copyDefaults(true);
         saveConfig();
         this.interval = config.getInt("smoke-interval");
@@ -67,6 +68,7 @@ public class PuffPuffDaddy extends JavaPlugin implements Listener {
         this.speed = (float) config.getDouble("particle-speed");
         this.distanceFromMouth = (float) config.getDouble("particle-dist-from-mouth");
         this.smokeInRain = config.getBoolean("smoke-in-rain");
+        this.offset = (float) config.getDouble("offset-from-mouth");
 
         if (this.interval != oldInterval || this.task == null) {
             if (this.task != null) {
@@ -152,7 +154,7 @@ public class PuffPuffDaddy extends JavaPlugin implements Listener {
                 }
                 double distance = distanceFromMouth;
                 Location player_loc = smoker.getLocation();
-                double rot_x = (player_loc.getYaw() + 90.0F) % 360.0F;
+                double rot_x = ((player_loc.getYaw() + 90.0F + offset) % 360.0F);
                 double rot_y = player_loc.getPitch() * -1.0F;
                 double h_length = distance * Math.cos(Math.toRadians(rot_y));
                 double yOff = distance * Math.sin(Math.toRadians(rot_y));
