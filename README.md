@@ -1,0 +1,3 @@
+# Introduction
+Sometimes in life you just want to be a thug on a minecraft server. Well here you go...
+![blazing screenshot](http://supa.me/J5cQfT.png "Thugs on the Eximius Gaming Network (ip: ex.gg)")
